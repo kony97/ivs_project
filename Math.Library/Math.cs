@@ -53,8 +53,13 @@ namespace Math.Library
 
         public double Sqrt(double n1, double n2) //odmocnina
         {
-            //TODO
-            return n1;
+            if (n1 <= 0) return -1;
+            else
+            {
+                double n3 = Div(1.0, n2);
+                double root = Pow(n1, n3);
+                return root;
+            }
         }
 
         public double Sub(double n1, double n2)//odčítá N2 od N1 a vrací N1
