@@ -38,7 +38,7 @@ namespace Math.Library
         
         public double Pow(double n1, double n2) //N1 umocněno na N2
         {
-          
+            if (n2 == 0) return 1;
             for(int i = 0; i < n2; i++)
             {
                 n1 *= n1;
