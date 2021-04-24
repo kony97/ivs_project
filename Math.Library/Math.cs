@@ -38,17 +38,7 @@ namespace Math.Library
         
         public double Pow(double n1, double n2) //N1 umocněno na N2
         {
-            if (n2 == 0) return 1;
-            else
-            {
-                double mocnina = 1;
-                for(int i = 0; i < n2; i++)
-                {
-                    mocnina *= n1;
-                }
-                return mocnina;
-            }
-            
+            return System.Math.Pow(n1, n2);
         }
 
         public double Sqrt(double n1, double n2) //odmocnina

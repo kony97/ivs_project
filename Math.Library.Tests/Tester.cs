@@ -71,7 +71,7 @@ namespace Math.Library.Tests
         {
             Assert.AreEqual(3.1622776601683793319988935444327, Math.Sqrt(10,2),Delta);
             Assert.AreEqual(3, Math.Sqrt(9, 2), Delta);
-            Assert.AreEqual(1.31607401, Math.Sqrt(9, 3), Delta);
+            Assert.AreEqual(2.080083823, Math.Sqrt(9, 3), Delta);
 
         }
 
