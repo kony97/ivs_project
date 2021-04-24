@@ -14,7 +14,7 @@ namespace Math.Library
 
         double Div(double n1, double n2);
 
-        double Abs(double n1, double n2);
+        double Abs(double n1);
 
         long Fact(int n);
 

@@ -4,7 +4,7 @@ namespace Math.Library
 {
     public class Math : IMath
     {
-        public double Abs(double n1, double n2)
+        public double Abs(double n1)
         {
             throw new NotImplementedException();
         }
