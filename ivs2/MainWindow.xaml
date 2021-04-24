@@ -5,8 +5,244 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ivs2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Kalkulačka" Icon="icon.ico" Height="400.5" Width="327" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+  <Grid Background="#FF2E2E2E" HorizontalAlignment="Left" Width="321">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="323"/>
+    </Grid.ColumnDefinitions>
+    <TextBox x:Name="input_line" HorizontalAlignment="Center" Height="42" Margin="10,10,22,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Left" VerticalContentAlignment="Center" Background="White" FontSize="20" BorderThickness="2"/>
+    <Button x:Name="btn_point" Content="." HorizontalAlignment="Left" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontWeight="Bold" Foreground="Black" FontSize="16">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_plus" HorizontalAlignment="Left" Content="+" Margin="190,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" Foreground="Black" FontSize="32">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_eq" Content="=" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="110" RenderTransformOrigin="-1.153,3.68" Background="#FFCB5555" BorderBrush="#FF666666" Margin="250,0,0,10" Foreground="Black" FontSize="36">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_minus" HorizontalAlignment="Left" Content="-" Margin="190,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" Foreground="Black" FontSize="32">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_2" Content="2" HorizontalAlignment="Left" Margin="70,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_3" Content="3" HorizontalAlignment="Left" Margin="130,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_1" Content="1" HorizontalAlignment="Left" Margin="10,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_4" Content="4" HorizontalAlignment="Left" Margin="10,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_5" Content="5" HorizontalAlignment="Left" Margin="70,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_6" Content="6" HorizontalAlignment="Left" Margin="130,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_9" Content="9" HorizontalAlignment="Left" Margin="130,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black" BorderThickness="2">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_8" Content="8" HorizontalAlignment="Left" Margin="70,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_7" Content="7" HorizontalAlignment="Left" Margin="10,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="32" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_pow" Content="x^y" HorizontalAlignment="Left" Margin="250,0,-209,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="20" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_sqrt" Content="x?y" HorizontalAlignment="Left" Margin="250,0,-191,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="24" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_fact" Content="x!" HorizontalAlignment="Left" Margin="190,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="25" Foreground="Black">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_zero" Content="0
+                " HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="110" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="28" Foreground="Black" HorizontalContentAlignment="Center" Padding="48,1,1,1">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_multiply" HorizontalAlignment="Left" Content="*" Margin="190,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" Foreground="Black" FontSize="32">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_divide" HorizontalAlignment="Left" Content="/" Margin="190,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" Foreground="Black" FontSize="20">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_ac" HorizontalAlignment="Left" Content="AC" Margin="10,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF666666" Foreground="Black" FontSize="24">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_delete" HorizontalAlignment="Left" Content="Del" Margin="69,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF666666" Foreground="Black" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_pm" HorizontalAlignment="Left" Content="+/-" Margin="130,0,-161,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF3A3A8B" BorderBrush="#FF666666" Foreground="Black" FontSize="28">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
+    <Button x:Name="btn_abs" HorizontalAlignment="Left" Content="ABS" Margin="250,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" Foreground="Black" FontSize="24">
+      <Button.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform/>
+          <SkewTransform/>
+          <RotateTransform Angle="-359.858"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Button.RenderTransform>
+    </Button>
 
-    </Grid>
+  </Grid>
 </Window>
+
