@@ -29,7 +29,7 @@ namespace Math.Library.Tests
         {
             Assert.AreEqual(-10, Math.Sub(0, 10));
             Assert.AreEqual(0, Math.Sub(10, 10));
-            Assert.AreEqual(0.9, Math.Sub(0, 0.1), Delta);
+            Assert.AreEqual(-0.1, Math.Sub(0, 0.1), Delta);
             Assert.AreEqual(-10, Math.Sub(0, 10));
         }
 
@@ -37,7 +37,7 @@ namespace Math.Library.Tests
         public void Mul()
         {
             Assert.AreEqual(0, Math.Mul(0, 10));
-            Assert.AreEqual(2.52, Math.Mul(2.3, 1.1), Delta);
+            Assert.AreEqual(2.53, Math.Mul(2.3, 1.1), Delta);
             Assert.AreEqual(28980, Math.Mul(69, 420), Delta);
         }
 
