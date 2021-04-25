@@ -205,6 +205,7 @@ namespace ivs2
                 btn_pm.IsEnabled = true;
                 btn_abs.IsEnabled = false;
                 btn_fact.IsEnabled = false;
+                DisableBinary();
             }
             else
             {
