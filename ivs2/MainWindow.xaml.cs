@@ -179,12 +179,8 @@ namespace ivs2
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
-            input_line.Text = "";
-            n1 = Double.NaN;
-        }
+           
 
-        private void btn_ac_Click(object sender, RoutedEventArgs e)
-        {
             if (input_line.Text != "")
             {
                 input_line.Text = input_line.Text.Remove(input_line.Text.Length - 1);
@@ -194,6 +190,12 @@ namespace ivs2
                 }
 
             }
+        }
+
+        private void btn_ac_Click(object sender, RoutedEventArgs e)
+        {
+            input_line.Text = "";
+            n1 = Double.NaN;
         }
 
         private void input_line_TextChanged(object sender, TextChangedEventArgs e)
