@@ -10,7 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="323"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="input_line" HorizontalAlignment="Left" Height="42" Margin="10,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Right" VerticalContentAlignment="Center" Background="White" FontSize="20" BorderThickness="2" TextChanged="input_line_TextChanged"/>
+        <TextBox x:Name="input_line" PreviewTextInput="ValidateTextBox"  HorizontalAlignment="Left" Height="42" Margin="10,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Right" VerticalContentAlignment="Center" Background="White" FontSize="20" BorderThickness="2" TextChanged="input_line_TextChanged"/>
         <Button x:Name="btn_point" Content="." HorizontalAlignment="Left" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontWeight="Bold" Foreground="Black" FontSize="16" Click="btn_point_Click">
             <Button.RenderTransform>
                 <TransformGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -44,6 +45,7 @@ namespace ivs2
             btn_pow.IsEnabled = false;
             btn_sqrt.IsEnabled = false;
 
+            btn_pm.IsEnabled = true;
         }
 
         private void EnableBinary()
@@ -60,64 +62,53 @@ namespace ivs2
         }
         
         private void btn_zero_Click(object sender, RoutedEventArgs e)
-        {   
-
+        {
             input_line.Text += 0;
-            EnableBinary();
         }
 
         private void btn_1_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 1;
-            EnableBinary();
         }
 
         private void btn_2_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 2;
-            EnableBinary();
         }
 
         private void btn_3_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 3;
-            EnableBinary();
         }
 
         private void btn_4_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 4;
-            EnableBinary();
         }
 
         private void btn_5_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 5;
-            EnableBinary();
         }
 
         private void btn_6_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 6;
-            EnableBinary();
         }
 
         private void btn_7_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 7;
-            EnableBinary();
         }
 
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 8;
-            EnableBinary();
         }
 
         private void btn_9_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 9;
-            EnableBinary();
         }
 
         private void btn_pow_Click(object sender, RoutedEventArgs e)
@@ -126,22 +117,20 @@ namespace ivs2
 
             input_line.Text += "^";
             op = 5;
-            DisableBinary();
         }
 
         private void btn_abs_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+           double n1 = Double.Parse(input_line.Text);
+            input_line.Text = math.Abs(n1).ToString();
         }
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
         {
-
             n1 =  Double.Parse(input_line.Text);
 
             input_line.Text += "*";
             op = 3;
-            DisableBinary();
         }
 
         private void btn_point_Click(object sender, RoutedEventArgs e)
@@ -164,7 +153,6 @@ namespace ivs2
 
             input_line.Text += "-";
             op = 2;
-            DisableBinary();
         }
 
         private void btn_divide_Click(object sender, RoutedEventArgs e)
@@ -173,7 +161,6 @@ namespace ivs2
 
             input_line.Text += "/";
             op = 4;
-            DisableBinary();
         }
 
         private void btn_plus_Click(object sender, RoutedEventArgs e)
@@ -182,12 +169,12 @@ namespace ivs2
 
             input_line.Text += "+";
             op = 1;
-            DisableBinary();
         }
 
         private void btn_fact_Click(object sender, RoutedEventArgs e)
         {
-            input_line.Text += "!";
+           int n1 = Int32.Parse(input_line.Text);
+            input_line.Text = math.Fact(n1).ToString();
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
@@ -215,17 +202,21 @@ namespace ivs2
             {
                 btn_pm.IsEnabled = true;
                 btn_abs.IsEnabled = false;
+                btn_fact.IsEnabled = false;
             }
             else
             {
-                if (double.IsNaN(n1))
+                if (double.IsNaN(n1) && input_line.Text != "-")
                 {
                     btn_abs.IsEnabled = true;
+                    btn_fact.IsEnabled = true;
                     EnableBinary();
                 }
                 else
                 {
+                    DisableBinary();
                     btn_abs.IsEnabled = false;
+                    btn_fact.IsEnabled = false;
                 }
 
                 btn_pm.IsEnabled = false;
@@ -234,17 +225,15 @@ namespace ivs2
 
         private void btn_pm_Click(object sender, RoutedEventArgs e)
         {
-            input_line.Text = "-";
+            input_line.Text += "-";
         }
 
         private void btn_sqrt_Click(object sender, RoutedEventArgs e)
         {
             n1 = Double.Parse(input_line.Text);
 
-            input_line.Text += "V";
+            input_line.Text += "√";
             op = 6;
-            DisableBinary();
-
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e)
@@ -287,5 +276,12 @@ namespace ivs2
             input_line.Text = o.ToString();
             EnableBinary();
         }
+
+        private void ValidateTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9|+|-|*|/|,]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
     }
 }
