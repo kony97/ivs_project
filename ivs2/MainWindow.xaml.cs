@@ -137,7 +137,7 @@ namespace ivs2
         {
             EnableBinary();
 
-            if (input_line.Text == "")
+            if (input_line.Text == "" || input_line.Text == "-")
             {
                 input_line.Text += "0,";
                 return;
@@ -323,6 +323,10 @@ namespace ivs2
             else if (e.Key == Key.Add && btn_plus.IsEnabled)
             {
                 btn_plus_Click(null, null);
+            }
+            else if (e.Key == Key.Subtract && btn_pm.IsEnabled)
+            {
+                btn_pm_Click(null, null);
             }
             else if (e.Key == Key.Subtract && btn_minus.IsEnabled)
             {
