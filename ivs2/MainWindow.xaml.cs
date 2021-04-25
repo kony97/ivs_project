@@ -173,11 +173,18 @@ namespace ivs2
             input_line.Text += "+";
             op = 1;
         }
-
+        
         private void btn_fact_Click(object sender, RoutedEventArgs e)
         {
-            int n1 = Int32.Parse(input_line.Text);
-            input_line.Text = math.Fact(n1).ToString();
+            try
+            {
+                int n1 = Int32.Parse(input_line.Text);
+                input_line.Text = math.Fact(n1).ToString();
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Příliš velké číslo!");
+            }
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
@@ -252,27 +259,33 @@ namespace ivs2
             }
 
             double o = 0;
-
-            switch (op)
+            try
             {
-                case 1:
-                    o = math.Add(n1, n2);
-                    break;
-                case 2:
-                    o = math.Sub(n1, n2);
-                    break;
-                case 3:
-                    o = math.Mul(n1, n2);
-                    break;
-                case 4:
-                    o = math.Div(n1, n2);
-                    break;
-                case 5:
-                    o = math.Pow(n1, n2);
-                    break;
-                case 6:
-                    o = math.Sqrt(n2, n1);
-                    break;
+                switch (op)
+                {
+                    case 1:
+                        o = math.Add(n1, n2);
+                        break;
+                    case 2:
+                        o = math.Sub(n1, n2);
+                        break;
+                    case 3:
+                        o = math.Mul(n1, n2);
+                        break;
+                    case 4:
+                        o = math.Div(n1, n2);
+                        break;
+                    case 5:
+                        o = math.Pow(n1, n2);
+                        break;
+                    case 6:
+                        o = math.Sqrt(n2, n1);
+                        break;
+                }
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Příliš vysoké číslo");
             }
 
             n1 = Double.NaN;
