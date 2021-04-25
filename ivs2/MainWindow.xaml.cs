@@ -265,7 +265,7 @@ namespace ivs2
                     o = math.Pow(n1, n2);
                     break;
                 case 6:
-                    o = math.Sqrt(n1, n2);
+                    o = math.Sqrt(n2, n1);
                     break;
                 default:
                     input_line.Text = "WTF";
