@@ -18,6 +18,9 @@ using Math;
 
 namespace ivs2
 {
+    
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -269,10 +272,6 @@ namespace ivs2
                 case 6:
                     o = math.Sqrt(n2, n1);
                     break;
-                default:
-                    input_line.Text = "WTF";
-                    break;
-
             }
 
             n1 = Double.NaN;
@@ -284,11 +283,11 @@ namespace ivs2
         {
             if (e.Key == Key.NumPad0 && btn_zero.IsEnabled)
             {
-                btn_zero_Click(null,null);
+                btn_zero_Click(null, null);
             }
             else if (e.Key == Key.NumPad1 && btn_1.IsEnabled)
             {
-                btn_1_Click(null,null);
+                btn_1_Click(null, null);
             }
             else if (e.Key == Key.NumPad2 && btn_2.IsEnabled)
             {
@@ -359,7 +358,8 @@ namespace ivs2
                 btn_delete_Click(null, null);
             }
 
-
+        
         }
     }
 }
+
