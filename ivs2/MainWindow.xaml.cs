@@ -387,6 +387,11 @@ namespace ivs2
 
         
         }
+
+        private void lbl_help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Toto ti moc nepomůže");
+        }
     }
 }
 

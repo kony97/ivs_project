@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:ivs2"
         mc:Ignorable="d"
         KeyDown="My_KeyDown"
-        Title="Kalkulačka" Height="400.5" Width="329" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Kalkulačka" Height="464" Width="329" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF2E2E2E" HorizontalAlignment="Left" Width="327">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="323"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="input_line" IsReadOnly="True" HorizontalAlignment="Left" Height="42" Margin="10,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Right" VerticalContentAlignment="Center" Background="White" FontSize="20" BorderThickness="2" TextChanged="input_line_TextChanged"/>
+        <TextBox x:Name="input_line" IsReadOnly="True" HorizontalAlignment="Left" Height="70" Margin="10,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Right" VerticalContentAlignment="Center" Background="White" FontSize="25" BorderThickness="2" TextChanged="input_line_TextChanged"/>
         <Button x:Name="btn_point" Content="." HorizontalAlignment="Left" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontWeight="Bold" Foreground="Black" FontSize="16" Click="btn_point_Click">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -243,6 +243,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Label x:Name="lbl_help" Content="?" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Top" Foreground="Red" MouseDown="lbl_help_MouseDown"/>
 
     </Grid>
 </Window>
