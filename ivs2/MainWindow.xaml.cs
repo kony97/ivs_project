@@ -375,11 +375,11 @@ namespace ivs2
             {
                 btn_eq_Click(null, null);
             }
-            else if (e.Key == Key.Back && btn_ac.IsEnabled)
+            else if (e.Key == Key.Escape && btn_ac.IsEnabled)
             {
                 btn_ac_Click(null, null);
             }
-            else if (e.Key == Key.Escape && btn_delete.IsEnabled)
+            else if (e.Key == Key.Back && btn_delete.IsEnabled)
             {
                 btn_delete_Click(null, null);
             }
