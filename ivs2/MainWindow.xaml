@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ivs2"
         mc:Ignorable="d"
         KeyDown="My_KeyDown"
-        Title="Kalkulačka" Height="464" Width="329" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Anti Social Calculator" Height="464" Width="329" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF2E2E2E" HorizontalAlignment="Left" Width="327">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="323"/>
