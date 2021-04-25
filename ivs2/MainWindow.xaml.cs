@@ -262,7 +262,7 @@ namespace ivs2
                 catch (FormatException)
                 {
                     MessageBox.Show("Špatný formát zadaného čísla");
-                    return;
+       
                 }
             }
 
