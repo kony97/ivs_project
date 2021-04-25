@@ -151,7 +151,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_sqrt" Content="x√y" HorizontalAlignment="Left" Margin="250,0,-191,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="24" Foreground="Black">
+        <Button x:Name="btn_sqrt" Content="x√y" HorizontalAlignment="Left" Margin="250,0,-191,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFC5C5C5" BorderBrush="#FF666666" FontSize="24" Foreground="Black" Click="btn_sqrt_Click"   >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -25,6 +25,7 @@ namespace ivs2
         private double n1 = Double.NaN;
         private int op = 0;
         private Math.Library.Math math = new Math.Library.Math();
+        private bool done = false;
 
 
         public MainWindow()
@@ -47,8 +48,6 @@ namespace ivs2
 
         private void EnableBinary()
         {
-            
-
             if (Double.IsNaN(n1))
             {
                 btn_divide.IsEnabled = true;
@@ -58,10 +57,6 @@ namespace ivs2
                 btn_pow.IsEnabled = true;
                 btn_sqrt.IsEnabled = true;
             }
-        
-
-       
-
         }
         
         private void btn_zero_Click(object sender, RoutedEventArgs e)
@@ -226,6 +221,11 @@ namespace ivs2
                 if (double.IsNaN(n1))
                 {
                     btn_abs.IsEnabled = true;
+                    EnableBinary();
+                }
+                else
+                {
+                    btn_abs.IsEnabled = false;
                 }
 
                 btn_pm.IsEnabled = false;
@@ -241,7 +241,7 @@ namespace ivs2
         {
             n1 = Double.Parse(input_line.Text);
 
-            input_line.Text += "√";
+            input_line.Text += "V";
             op = 6;
             DisableBinary();
 
@@ -256,7 +256,6 @@ namespace ivs2
                 n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length+1));
             }
 
-            input_line.Text += "=";
             double o= 0;
 
             switch (op)
@@ -284,7 +283,9 @@ namespace ivs2
                     break;
 
             }
-            input_line.Text += o;
+            n1=Double.NaN;
+            input_line.Text = o.ToString();
+            EnableBinary();
         }
     }
 }
