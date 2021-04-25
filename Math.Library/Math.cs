@@ -17,6 +17,10 @@ namespace Math.Library
 
         public double Div(double n1, double n2) //dělení
         {
+            if (n2 == 0)
+            {
+                throw new DivideByZeroException("Nulou nelze dělit");
+            }
             return n1 / n2;
         }
 

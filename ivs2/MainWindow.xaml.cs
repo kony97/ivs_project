@@ -255,7 +255,15 @@ namespace ivs2
 
             if (!double.IsNaN(n1))
             {
-                n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length + 1));
+                try 
+                { 
+                    n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length + 1));
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Špatný formát zadaného čísla");
+                    return;
+                }
             }
 
             double o = 0;
@@ -286,6 +294,10 @@ namespace ivs2
             catch (OverflowException)
             {
                 MessageBox.Show("Příliš vysoké číslo");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("Nulou nelze dělit");
             }
 
             n1 = Double.NaN;
