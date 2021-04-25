@@ -300,6 +300,7 @@ namespace ivs2
                 MessageBox.Show("Nulou nelze dělit");
             }
 
+            op = 0;
             n1 = Double.NaN;
             input_line.Text = o.ToString();
             EnableBinary();
