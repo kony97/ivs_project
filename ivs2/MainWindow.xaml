@@ -7,12 +7,125 @@
         mc:Ignorable="d"
         KeyDown="My_KeyDown"
         Title="Anti Social Calculator" Height="464" Width="329" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FF837777"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FF000000"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FFE8E8E8"/>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FF000000"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FFE8E8E8"/>
+        <Style x:Key="btn_pm" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid Background="#FF2E2E2E" HorizontalAlignment="Left" Width="327">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="323"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="input_line" IsReadOnly="True" HorizontalAlignment="Left" Height="70" Margin="10,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" TextAlignment="Right" VerticalContentAlignment="Center" Background="White" FontSize="25" BorderThickness="2" TextChanged="input_line_TextChanged"/>
-        <Button x:Name="btn_point" Content="." HorizontalAlignment="Left" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" FontWeight="Bold" Foreground="Black" FontSize="16" Click="btn_point_Click">
+        <Button x:Name="btn_point" Content="." HorizontalAlignment="Left" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="Black" FontWeight="Bold" Foreground="#FFE8E8E8" FontSize="16" Click="btn_point_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,7 +135,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_plus" HorizontalAlignment="Left" Content="+" Margin="190,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" Foreground="Black" FontSize="32" Click="btn_plus_Click">
+        <Button x:Name="btn_plus" HorizontalAlignment="Left" Content="+" Margin="190,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" Foreground="#FFE8E8E8" FontSize="32" Click="btn_plus_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,7 +145,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_eq" Content="=" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="110" RenderTransformOrigin="-1.153,3.68" Background="#FFCB5555" BorderBrush="#FF666666" Margin="250,0,0,10" Foreground="Black" FontSize="36" Click="btn_eq_Click">
+        <Button x:Name="btn_eq" Content="=" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="110" RenderTransformOrigin="-1.153,3.68" Background="#FFCF1F1F" BorderBrush="Black" Margin="250,0,0,10" Foreground="Black" FontSize="36" Click="btn_eq_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -42,7 +155,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_minus" HorizontalAlignment="Left" Content="-" Margin="190,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" Foreground="Black" FontSize="32" Click="btn_minus_Click">
+        <Button x:Name="btn_minus" HorizontalAlignment="Left" Content="-" Margin="190,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" Foreground="#FFE8E8E8" FontSize="32" Click="btn_minus_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -52,7 +165,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_2" Content="2" HorizontalAlignment="Left" Margin="70,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_2_Click">
+        <Button x:Name="btn_2" Content="2" HorizontalAlignment="Left" Margin="70,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_2_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -62,7 +175,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_3" Content="3" HorizontalAlignment="Left" Margin="130,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_3_Click">
+        <Button x:Name="btn_3" Content="3" HorizontalAlignment="Left" Margin="130,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_3_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -72,7 +185,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_1" Content="1" HorizontalAlignment="Left" Margin="10,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_1_Click">
+        <Button x:Name="btn_1" Content="1" HorizontalAlignment="Left" Margin="10,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_1_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -82,7 +195,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_4" Content="4" HorizontalAlignment="Left" Margin="10,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_4_Click" >
+        <Button x:Name="btn_4" Content="4" HorizontalAlignment="Left" Margin="10,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_4_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -92,7 +205,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_5" Content="5" HorizontalAlignment="Left" Margin="70,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_5_Click" >
+        <Button x:Name="btn_5" Content="5" HorizontalAlignment="Left" Margin="70,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_5_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -102,7 +215,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_6" Content="6" HorizontalAlignment="Left" Margin="130,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_6_Click" >
+        <Button x:Name="btn_6" Content="6" HorizontalAlignment="Left" Margin="130,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_6_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -112,7 +225,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_9" Content="9" HorizontalAlignment="Left" Margin="130,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" BorderThickness="2" Click="btn_9_Click" >
+        <Button x:Name="btn_9" Content="9" HorizontalAlignment="Left" Margin="130,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" BorderThickness="1,1,1,1" Click="btn_9_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -122,7 +235,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_8" Content="8" HorizontalAlignment="Left" Margin="70,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_8_Click" >
+        <Button x:Name="btn_8" Content="8" HorizontalAlignment="Left" Margin="70,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_8_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -132,7 +245,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_7" Content="7" HorizontalAlignment="Left" Margin="10,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="32" Foreground="Black" Click="btn_7_Click" >
+        <Button x:Name="btn_7" Content="7" HorizontalAlignment="Left" Margin="10,0,0,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF020202" FontSize="32" Foreground="Black" Click="btn_7_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -142,7 +255,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_pow" Content="x^y" HorizontalAlignment="Left" Margin="250,0,-209,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" FontSize="20" Foreground="Black" Click="btn_pow_Click">
+        <Button x:Name="btn_pow" Content="x^y" HorizontalAlignment="Left" Margin="250,0,-209,190" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" FontSize="20" Foreground="#FFE8E8E8" Click="btn_pow_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -152,7 +265,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_sqrt" Content="x√y" HorizontalAlignment="Left" Margin="250,0,-191,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" FontSize="24" Foreground="Black" Click="btn_sqrt_Click"   >
+        <Button x:Name="btn_sqrt" Content="x√y" HorizontalAlignment="Left" Margin="250,0,-191,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" FontSize="24" Foreground="#FFE8E8E8" Click="btn_sqrt_Click"   >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -162,7 +275,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_fact" IsEnabled="False" Content="x!" HorizontalAlignment="Left" Margin="190,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" FontSize="25" Foreground="Black" Click="btn_fact_Click">
+        <Button x:Name="btn_fact" IsEnabled="False" Content="x!" HorizontalAlignment="Left" Margin="190,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" FontSize="25" Foreground="#FFE8E8E8" Click="btn_fact_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -173,7 +286,7 @@
             </Button.RenderTransform>
         </Button>
         <Button x:Name="btn_zero" Content="0
-                " HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="110" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF666666" FontSize="28" Foreground="Black" HorizontalContentAlignment="Center" Padding="48,1,1,1" Click="btn_zero_Click">
+                " HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="110" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFE8E8E8" BorderBrush="#FF0C0C0C" FontSize="28" Foreground="Black" HorizontalContentAlignment="Center" Padding="48,1,1,1" Click="btn_zero_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -183,7 +296,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_multiply" HorizontalAlignment="Left" Content="*" Margin="190,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" Foreground="Black" FontSize="32" Click="btn_multiply_Click">
+        <Button x:Name="btn_multiply" HorizontalAlignment="Left" Content="*" Margin="190,0,0,10" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" Foreground="#FFE8E8E8" FontSize="32" Click="btn_multiply_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -193,7 +306,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_divide" HorizontalAlignment="Left" Content="/" Margin="190,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" Foreground="Black" FontSize="20" Click="btn_divide_Click">
+        <Button x:Name="btn_divide" HorizontalAlignment="Left" Content="/" Margin="190,0,0,70" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" Foreground="#FFE8E8E8" FontSize="20" Click="btn_divide_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -203,7 +316,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_ac" HorizontalAlignment="Left" Content="AC" Margin="10,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF666666" Foreground="Black" FontSize="24" Click="btn_ac_Click">
+        <Button x:Name="btn_ac" HorizontalAlignment="Left" Content="AC" Margin="10,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF020202" Foreground="Black" FontSize="24" Click="btn_ac_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -213,7 +326,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_delete" HorizontalAlignment="Left" Content="Del" Margin="69,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF666666" Foreground="Black" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btn_delete_Click">
+        <Button x:Name="btn_delete" HorizontalAlignment="Left" Content="Del" Margin="69,0,0,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FFBD6A43" BorderBrush="#FF020202" Foreground="Black" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btn_delete_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -223,7 +336,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_pm" HorizontalAlignment="Left" Content="+/-" Margin="130,0,-161,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF3A3A8B" BorderBrush="#FF666666" Foreground="Black" FontSize="28" Click="btn_pm_Click">
+        <Button Style="{DynamicResource btn_pm}" x:Name="btn_pm" HorizontalAlignment="Left" Content="+/-" Margin="130,0,-161,250" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF3A3A8B" BorderBrush="#FF020202" Foreground="#FFE8E8E8" FontSize="28" Click="btn_pm_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -233,7 +346,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_abs" IsEnabled="False" HorizontalAlignment="Left" Content="ABS" Margin="250,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF837777" BorderBrush="#FF666666" Foreground="Black" FontSize="24" Click="btn_abs_Click">
+        <Button x:Name="btn_abs" IsEnabled="False" HorizontalAlignment="Left" Content="ABS" Margin="250,0,0,130" VerticalAlignment="Bottom" Width="50" Height="50" RenderTransformOrigin="-1.153,3.68" Background="#FF554747" BorderBrush="#FF080808" Foreground="#FFE8E8E8" FontSize="24" Click="btn_abs_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -243,7 +356,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Label x:Name="lbl_help" Content="?" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Top" Foreground="Red" MouseDown="lbl_help_MouseDown"/>
+        <Label x:Name="lbl_help" Content="?" HorizontalAlignment="Left" Margin="288,2,0,0" VerticalAlignment="Top" Foreground="Red" MouseDown="lbl_help_MouseDown"/>
 
     </Grid>
 </Window>
