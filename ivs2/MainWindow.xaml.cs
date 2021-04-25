@@ -60,7 +60,7 @@ namespace ivs2
                 btn_sqrt.IsEnabled = true;
             }
         }
-        
+
         private void btn_zero_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += 0;
@@ -121,13 +121,13 @@ namespace ivs2
 
         private void btn_abs_Click(object sender, RoutedEventArgs e)
         {
-           double n1 = Double.Parse(input_line.Text);
+            double n1 = Double.Parse(input_line.Text);
             input_line.Text = math.Abs(n1).ToString();
         }
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
         {
-            n1 =  Double.Parse(input_line.Text);
+            n1 = Double.Parse(input_line.Text);
 
             input_line.Text += "*";
             op = 3;
@@ -173,7 +173,7 @@ namespace ivs2
 
         private void btn_fact_Click(object sender, RoutedEventArgs e)
         {
-           int n1 = Int32.Parse(input_line.Text);
+            int n1 = Int32.Parse(input_line.Text);
             input_line.Text = math.Fact(n1).ToString();
         }
 
@@ -192,8 +192,8 @@ namespace ivs2
                 {
                     n1 = Double.NaN;
                 }
-            
-        }
+
+            }
         }
 
         private void input_line_TextChanged(object sender, TextChangedEventArgs e)
@@ -241,47 +241,119 @@ namespace ivs2
             double n2 = 0;
 
             if (!double.IsNaN(n1))
-            { 
-                n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length+1));
+            {
+                n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length + 1));
             }
 
-            double o= 0;
+            double o = 0;
 
             switch (op)
             {
-               case 1:
-                   o = math.Add(n1, n2);
-                   break;
-               case 2:
-                   o = math.Sub(n1, n2);
+                case 1:
+                    o = math.Add(n1, n2);
                     break;
-               case 3:
-                   o = math.Mul(n1, n2);
+                case 2:
+                    o = math.Sub(n1, n2);
                     break;
-               case 4:
-                   o = math.Div(n1, n2);
+                case 3:
+                    o = math.Mul(n1, n2);
                     break;
-               case 5:
-                   o = math.Pow(n1, n2);
+                case 4:
+                    o = math.Div(n1, n2);
                     break;
-               case 6:
-                   o = math.Sqrt(n1, n2);
+                case 5:
+                    o = math.Pow(n1, n2);
                     break;
-               default:
-                   input_line.Text = "WTF";
+                case 6:
+                    o = math.Sqrt(n1, n2);
+                    break;
+                default:
+                    input_line.Text = "WTF";
                     break;
 
             }
-            n1=Double.NaN;
+
+            n1 = Double.NaN;
             input_line.Text = o.ToString();
             EnableBinary();
         }
 
-        private void ValidateTextBox(object sender, TextCompositionEventArgs e)
+        private void My_KeyDown(object sender, KeyEventArgs e)
         {
-            Regex regex = new Regex("[^0-9|+|-|*|/|,]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
+            if (e.Key == Key.NumPad0 && btn_zero.IsEnabled)
+            {
+                btn_zero_Click(null,null);
+            }
+            else if (e.Key == Key.NumPad1 && btn_1.IsEnabled)
+            {
+                btn_1_Click(null,null);
+            }
+            else if (e.Key == Key.NumPad2 && btn_2.IsEnabled)
+            {
+                btn_2_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad3 && btn_3.IsEnabled)
+            {
+                btn_3_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad4 && btn_4.IsEnabled)
+            {
+                btn_4_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad5 && btn_5.IsEnabled)
+            {
+                btn_5_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad6 && btn_6.IsEnabled)
+            {
+                btn_6_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad7 && btn_7.IsEnabled)
+            {
+                btn_7_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad8 && btn_8.IsEnabled)
+            {
+                btn_8_Click(null, null);
+            }
+            else if (e.Key == Key.NumPad9 && btn_9.IsEnabled)
+            {
+                btn_9_Click(null, null);
+            }
+            else if (e.Key == Key.Add && btn_plus.IsEnabled)
+            {
+                btn_plus_Click(null, null);
+            }
+            else if (e.Key == Key.Subtract && btn_minus.IsEnabled)
+            {
+                btn_minus_Click(null, null);
+            }
+            else if (e.Key == Key.Multiply && btn_multiply.IsEnabled)
+            {
+                btn_multiply_Click(null, null);
+            }
+            else if (e.Key == Key.Divide && btn_divide.IsEnabled)
+            {
+                btn_divide_Click(null, null);
+            }
+            else if (e.Key == Key.Decimal && btn_point.IsEnabled)
+            {
+                btn_point_Click(null, null);
+            }
+            else if (e.Key == Key.Enter && btn_eq.IsEnabled)
+            {
+                btn_eq_Click(null, null);
+            }
+            else if (e.Key == Key.Back && btn_ac.IsEnabled)
+            {
+                btn_ac_Click(null, null);
+            }
+            else if (e.Key == Key.Escape && btn_delete.IsEnabled)
+            {
+                btn_delete_Click(null, null);
+            }
 
+
+        }
     }
 }
