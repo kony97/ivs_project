@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,8 +36,10 @@ namespace ivs2
 
         public MainWindow()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-Us");
             InitializeComponent();
             DisableBinary();
+            
         }
 
 
@@ -142,11 +146,11 @@ namespace ivs2
 
             if (input_line.Text == "" || input_line.Text == "-")
             {
-                input_line.Text += "0,";
+                input_line.Text += "0.";
                 return;
             }
 
-            input_line.Text += ",";
+            input_line.Text += ".";
             DisableBinary();
         }
 
