@@ -266,7 +266,7 @@ namespace ivs2
                 catch (FormatException)
                 {
                     MessageBox.Show("Špatný formát zadaného čísla");
-                    return;
+       
                 }
             }
 
@@ -390,6 +390,11 @@ namespace ivs2
             }
 
         
+        }
+
+        private void lbl_help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Toto ti moc nepomůže");
         }
     }
 }
