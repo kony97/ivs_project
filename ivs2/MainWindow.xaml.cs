@@ -57,15 +57,12 @@ namespace ivs2
 
         private void EnableBinary()
         {
-            if (Double.IsNaN(n1))
-            {
                 btn_divide.IsEnabled = true;
                 btn_minus.IsEnabled = true;
                 btn_plus.IsEnabled = true;
                 btn_multiply.IsEnabled = true;
                 btn_pow.IsEnabled = true;
                 btn_sqrt.IsEnabled = true;
-            }
         }
 
         private void btn_zero_Click(object sender, RoutedEventArgs e)
@@ -118,13 +115,7 @@ namespace ivs2
             input_line.Text += 9;
         }
 
-        private void btn_pow_Click(object sender, RoutedEventArgs e)
-        {
-            n1 = Double.Parse(input_line.Text);
-
-            input_line.Text += "^";
-            op = 5;
-        }
+       
 
         private void btn_abs_Click(object sender, RoutedEventArgs e)
         {
@@ -134,10 +125,100 @@ namespace ivs2
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
         {
-            n1 = Double.Parse(input_line.Text);
+            if (Double.IsNaN(n1))
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
 
             input_line.Text += "*";
             op = 3;
+        }
+
+        private void btn_pow_Click(object sender, RoutedEventArgs e)
+        {
+            if (Double.IsNaN(n1))
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
+
+            input_line.Text += "^";
+            op = 5;
+        }
+
+        private void btn_minus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Double.IsNaN(n1))
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
+
+            input_line.Text += "-";
+            op = 2;
+        }
+
+        private void btn_divide_Click(object sender, RoutedEventArgs e)
+        {
+            if (Double.IsNaN(n1))
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
+
+            input_line.Text += "/";
+            op = 4;
+        }
+
+        private void btn_plus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Double.IsNaN(n1)) 
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
+
+       
+
+            input_line.Text += "+";
+            op = 1;
+        }
+
+        private void btn_sqrt_Click(object sender, RoutedEventArgs e)
+        {
+            if (Double.IsNaN(n1))
+            {
+                n1 = Double.Parse(input_line.Text);
+            }
+            else
+            {
+                btn_eq_Click(null, null);
+                n1 = Double.Parse(input_line.Text);
+            }
+
+            input_line.Text += "√";
+            op = 6;
         }
 
         private void btn_point_Click(object sender, RoutedEventArgs e)
@@ -154,29 +235,7 @@ namespace ivs2
             DisableBinary();
         }
 
-        private void btn_minus_Click(object sender, RoutedEventArgs e)
-        {
-            n1 = Double.Parse(input_line.Text);
-
-            input_line.Text += "-";
-            op = 2;
-        }
-
-        private void btn_divide_Click(object sender, RoutedEventArgs e)
-        {
-            n1 = Double.Parse(input_line.Text);
-
-            input_line.Text += "/";
-            op = 4;
-        }
-
-        private void btn_plus_Click(object sender, RoutedEventArgs e)
-        {
-            n1 = Double.Parse(input_line.Text);
-
-            input_line.Text += "+";
-            op = 1;
-        }
+       
         
         private void btn_fact_Click(object sender, RoutedEventArgs e)
         {
@@ -229,6 +288,10 @@ namespace ivs2
                     btn_fact.IsEnabled = true;
                     EnableBinary();
                 }
+                else if(Char.IsDigit(input_line.Text.Last()))
+                {
+                    EnableBinary();
+                }
                 else
                 {
                     DisableBinary();
@@ -243,14 +306,6 @@ namespace ivs2
         private void btn_pm_Click(object sender, RoutedEventArgs e)
         {
             input_line.Text += "-";
-        }
-
-        private void btn_sqrt_Click(object sender, RoutedEventArgs e)
-        {
-            n1 = Double.Parse(input_line.Text);
-
-            input_line.Text += "√";
-            op = 6;
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e)
