@@ -154,6 +154,7 @@ namespace ivs2
 
             input_line.Text += "^";
             op = 5;
+            btn_pm.IsEnabled = true;
         }
 
         private void btn_minus_Click(object sender, RoutedEventArgs e)
@@ -245,9 +246,20 @@ namespace ivs2
                 int n1 = Int32.Parse(input_line.Text);
                 input_line.Text = math.Fact(n1).ToString();
             }
-            catch (OverflowException)
+            catch (Exception ex)
             {
-                MessageBox.Show("Příliš velké číslo!");
+                if (ex is OverflowException)
+                {
+                    MessageBox.Show("Příliš velké číslo!");
+                }
+                else if(ex is FormatException)
+                {
+                    MessageBox.Show("Pouze celá čísla");
+                }
+                else
+                {
+                    throw ex;
+                }
             }
         }
 
@@ -280,6 +292,7 @@ namespace ivs2
 
         private void input_line_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
             if (input_line.Text == "")
             {
                 btn_pm.IsEnabled = true;
