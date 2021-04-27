@@ -32,6 +32,7 @@ namespace ivs2
         private int op = 0;
         private Math.Library.Math math = new Math.Library.Math();
         private bool done = false;
+        private char[] operators = { '+', '-', '*', '/', '^', '√' };
 
 
         public MainWindow()
@@ -256,6 +257,12 @@ namespace ivs2
 
             if (input_line.Text != "")
             {
+                if (operators.Contains(input_line.Text.Last()))
+                {
+                    n1 = Double.NaN;
+                    op = 0;
+                }
+
                 input_line.Text = input_line.Text.Remove(input_line.Text.Length - 1);
                 if (input_line.Text == "")
                 {
@@ -315,7 +322,7 @@ namespace ivs2
             if (!double.IsNaN(n1))
             {
                 try 
-                { 
+                {
                     n2 = Double.Parse(input_line.Text.Substring(n1.ToString().Length + 1));
                 }
                 catch (FormatException)
