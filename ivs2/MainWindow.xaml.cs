@@ -52,8 +52,7 @@ namespace ivs2
             btn_multiply.IsEnabled = false;
             btn_pow.IsEnabled = false;
             btn_sqrt.IsEnabled = false;
-
-            btn_pm.IsEnabled = true;
+            
         }
 
         private void EnableBinary()
