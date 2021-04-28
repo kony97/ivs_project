@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:ASC_Setup"
+"ProjectName" = "8:ASC"
 "LanguageId" = "3:1029"
 "CodePage" = "3:1250"
 "UILanguageId" = "3:1029"
@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_811DA8C987454CCA998033C1C5E4AC1F"
+        "MsmKey" = "8:_4759FD41BB694BA49D648DB94C5D45C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -37,6 +37,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -53,6 +69,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -70,6 +94,16 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_866794017EF04915A39E06EC7EECAFA6"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
@@ -131,7 +165,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ASC_Setup"
         "ProductCode" = "8:{B35EB392-5E58-4728-AF59-62147388E5D8}"
-        "PackageCode" = "8:{08AC6BD4-537A-4D14-8295-5962B67470D0}"
+        "PackageCode" = "8:{71ED4508-A7DF-49AD-AA1E-C7B228F5FDD3}"
         "UpgradeCode" = "8:{7185FBF3-9E67-4BBD-8F90-41A486930F3D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -251,34 +285,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_490B5ECC41BF4161B64D1F36DECC894F"
-            {
-            "Name" = "8:Shortcut to Položky publikování from ivs2 (Active)"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_811DA8C987454CCA998033C1C5E4AC1F"
-            "Folder" = "8:_A5AA8C049BE84D94BB4DE5983FF6EA77"
-            "WorkingFolder" = "8:_4B19640EF02F4161835833C4F739D413"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AA4609470DA94E33AE1060D9BF5D2621"
-            {
-            "Name" = "8:Shortcut to Položky publikování from ivs2 (Active)"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_811DA8C987454CCA998033C1C5E4AC1F"
-            "Folder" = "8:_988ABC71B7E945BEA8FC2368F640C7A3"
-            "WorkingFolder" = "8:_4B19640EF02F4161835833C4F739D413"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -678,7 +684,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_811DA8C987454CCA998033C1C5E4AC1F"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4759FD41BB694BA49D648DB94C5D45C8"
             {
             "SourcePath" = "8:..\\ivs2\\obj\\Debug\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
