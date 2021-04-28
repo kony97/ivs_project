@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profiling", "Profiling\Profiling.csproj", "{235A878B-55F1-48DA-B29E-BD5923402D23}"
+EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ASC_Setup", "ASC_Setup\ASC_Setup.vdproj", "{DB86C05B-38F3-459E-9AE5-78997434C77E}"
 EndProject
 Global
@@ -34,6 +36,10 @@ Global
 		{C3A3BE00-0B99-46FA-AB1B-27FC7BF73C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A3BE00-0B99-46FA-AB1B-27FC7BF73C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A3BE00-0B99-46FA-AB1B-27FC7BF73C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235A878B-55F1-48DA-B29E-BD5923402D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235A878B-55F1-48DA-B29E-BD5923402D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235A878B-55F1-48DA-B29E-BD5923402D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235A878B-55F1-48DA-B29E-BD5923402D23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB86C05B-38F3-459E-9AE5-78997434C77E}.Debug|Any CPU.ActiveCfg = Debug
 		{DB86C05B-38F3-459E-9AE5-78997434C77E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
