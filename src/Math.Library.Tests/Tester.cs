@@ -1,4 +1,20 @@
-﻿using System;
+/****************************************************
+ * Název projektu: Kalkulačka
+ * Soubor: Tester.cs
+ * Datum: 20.4.2021
+ * Poslední změna: 28.4.2021
+ * Autor: ASSC tým
+ * 
+ * Popis: Testy matematické knihovny
+ * 
+ ****************************************************
+ /**
+ * @file Tester.cs
+ * 
+ * @autor ASSC tým
+ */
+
+using System;
 using NUnit.Framework;
 using Math.Library;
 
