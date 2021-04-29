@@ -3,4 +3,4 @@ Hodnocení
 xkonet01 (Jakub Konetzný) - 109% - Back-end, Profiling, Makefile, Testování
 xhochm07 (Martin Hochman) - 97% - Dokumentace, Mockup, Front-end, Testování
 xstast37 (Jaromír Šťastný) - 97% - Matematická knihovna, Back-end, Testování
-xdejma01 (Jan Dejmaů) - 97% - Front-end, Installer, Testování
+xdejma01 (Jan Dejmal) - 97% - Front-end, Installer, Testování
