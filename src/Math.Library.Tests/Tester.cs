@@ -26,7 +26,8 @@ namespace Math.Library.Tests
         private Math Math = new Math();
 
         private const double Delta = 0.1;
-
+        
+        //Testy na ščítání
         [Test]
         public void Add()
         {
@@ -39,7 +40,7 @@ namespace Math.Library.Tests
             Assert.AreEqual(0.5, Math.Add(0.2, .3), Delta);
         }
 
-
+        //Testy na odčítání
         [Test]
         public void Sub()
         {
@@ -49,6 +50,7 @@ namespace Math.Library.Tests
             Assert.AreEqual(-10, Math.Sub(0, 10));
         }
 
+        //Testy na násobení
         [Test]
         public void Mul()
         {
@@ -57,6 +59,7 @@ namespace Math.Library.Tests
             Assert.AreEqual(28980, Math.Mul(69, 420), Delta);
         }
 
+        //Testy na dělení
         [Test]
         public void Div()
         {
@@ -65,6 +68,7 @@ namespace Math.Library.Tests
             Assert.AreEqual(2.5, Math.Div(10, 4), Delta);
         }
 
+        //Testy na dělení
         [Test]
         public void Abs()
         {
@@ -73,6 +77,7 @@ namespace Math.Library.Tests
             Assert.AreEqual(10, Math.Abs(-10));
         }
 
+        //Testy na faktoriál
         [Test]
         public void Fact()
         {
@@ -82,6 +87,7 @@ namespace Math.Library.Tests
 
         }
 
+        //Testy na odmocninu
         [Test]
         public void Sqrt()
         {
@@ -91,6 +97,7 @@ namespace Math.Library.Tests
 
         }
 
+        //Testy na mocniny
         [Test]
         public void Pow()
         {
