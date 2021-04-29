@@ -1,4 +1,20 @@
-﻿using System;
+/****************************************************
+ * Název projektu: Kalkulačka
+ * Soubor: Program.cs
+ * Datum: 20.4.2021
+ * Poslední změna: 28.4.2021
+ * Autor: ASSC tým
+ * 
+ * Popis: Profiling
+ * 
+ ****************************************************
+ /**
+ * @file Program.cs
+ * 
+ * @autor ASSC tým
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -15,22 +31,26 @@ namespace Profiling
             string s;
             List<double> numbers = new List<double>();
             double x1 = 0, sum=0,sum2=0;
-
+            
+            //Načitá hodnoty z konzole
             while ((s = Console.ReadLine()) != null)
             {
                 s = Regex.Replace(s, @"\s+", " ");
 
                 string[] numbersString = s.Split(" ");
-
+                
+                //Přidává validní čísla do Listu
                 foreach (var number in numbersString)
                 {
                     double n;
                     bool success = Double.TryParse(number, out n);
-
+                    
+                    //Pokud je číslo validní - přidá číslo do listu
                     if (success)
                     {
                         numbers.Add(n);
                     }
+                    //Pokud není validní - ukončí se a napíše, které číslo není validné
                     else
                     {
                         Console.WriteLine("{0} is not valid number", number);
@@ -38,7 +58,8 @@ namespace Profiling
                     }
                 }
             }
-
+            
+            //Výpočet vzorce ze zadání
             foreach (var n in numbers)
             {
                 sum = Math.Library.Math.Add(sum, n);
