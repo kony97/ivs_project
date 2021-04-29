@@ -468,7 +468,7 @@ namespace ivs2
 
         private void lbl_help_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Toto ti moc nepomůže");
+            MessageBox.Show("Anti Social Calculator\nJednoduá kalkulačka pro základní výpočty\nDatum vytvoření: 25.4.2021\nVerze: 1.0.0\nAutor: Anti Social Social Club");
         }
     }
 }
