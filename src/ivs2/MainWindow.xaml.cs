@@ -30,7 +30,6 @@ namespace ivs2
     {
         private double n1 = Double.NaN;
         private int op = 0;
-        private Math.Library.Math math = new Math.Library.Math();
         private char[] operators = { '+', '-', '*', '/', '^', '√' };
 
 
@@ -119,7 +118,7 @@ namespace ivs2
         private void btn_abs_Click(object sender, RoutedEventArgs e)
         {
             double n1 = Double.Parse(input_line.Text);
-            input_line.Text = math.Abs(n1).ToString();
+            input_line.Text = Math.Library.Math.Abs(n1).ToString();
         }
 
         private void btn_multiply_Click(object sender, RoutedEventArgs e)
@@ -242,7 +241,7 @@ namespace ivs2
             try
             {
                 int n1 = Int32.Parse(input_line.Text);
-                input_line.Text = math.Fact(n1).ToString();
+                input_line.Text = Math.Library.Math.Fact(n1).ToString();
             }
             catch (Exception ex)
             {
@@ -349,22 +348,22 @@ namespace ivs2
                 switch (op)
                 {
                     case 1:
-                        o = math.Add(n1, n2);
+                        o = Math.Library.Math.Add(n1, n2);
                         break;
                     case 2:
-                        o = math.Sub(n1, n2);
+                        o = Math.Library.Math.Sub(n1, n2);
                         break;
                     case 3:
-                        o = math.Mul(n1, n2);
+                        o = Math.Library.Math.Mul(n1, n2);
                         break;
                     case 4:
-                        o = math.Div(n1, n2);
+                        o = Math.Library.Math.Div(n1, n2);
                         break;
                     case 5:
-                        o = math.Pow(n1, n2);
+                        o = Math.Library.Math.Pow(n1, n2);
                         break;
                     case 6:
-                        o = math.Sqrt(n2, n1);
+                        o = Math.Library.Math.Sqrt(n2, n1);
                         break;
                 }
             }
