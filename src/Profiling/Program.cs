@@ -15,7 +15,7 @@ namespace Profiling
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-Us");
             string s;
             List<double> numbers = new List<double>();
-            double x1 = 0, sum=0,x2=0,x=0,sum2=0;
+            double x1 = 0, sum=0,sum2=0;
             Math.Library.Math math = new Math.Library.Math();
 
             while ((s = Console.ReadLine()) != null)

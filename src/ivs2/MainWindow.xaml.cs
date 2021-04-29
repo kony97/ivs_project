@@ -31,7 +31,6 @@ namespace ivs2
         private double n1 = Double.NaN;
         private int op = 0;
         private Math.Library.Math math = new Math.Library.Math();
-        private bool done = false;
         private char[] operators = { '+', '-', '*', '/', '^', '√' };
 
 
