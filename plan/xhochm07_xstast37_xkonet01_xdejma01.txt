@@ -1,0 +1,62 @@
+Projekt IVS
+
+IVS - Projekt 2 - Týmová spolupráce - Kalkulačka
+Datum: 20.3.2021
+Název týmu - Anti social social club
+—————————
+Členové
+
+xhochm07 - Martin Hochman
+xstast37 - Jaromír Šťastný
+xkonet01 - Jakub Konetzný
+xdejma01 - Jan Dejmal
+—————————
+Přidělení úkolů
+
+xhochm07
+	Dokumentace
+	Plánování
+	Front-end
+
+xkonet01
+	Testování
+	Instalatér
+	Back-end
+
+xstast37
+	Matematická knihovna
+	Back-end
+	Front-end
+
+xdejma01
+	Front-end
+	Dokumentace
+	Rozhraní
+
+—————————————
+Komunikace
+	
+	Vlastní Discord server 
+			- hlavní komunikace
+			- naplánované týmové hovory každý týden
+			- místnosti určený pro sdílení kódu, pro komunikaci
+	Osobní schůzky 
+			- členové týmu se nepravidelně (kvůli covid opatření) schází ve volném čase (samozřejmě v roušce)
+
+—————————————
+Termíny
+
+21.3. - vytvoření repozitáře (gitlab)
+24.3. - Začátek práce na projektů
+28.3. - Front-end & Back-end
+4.4. - Tvorba testů
+11.4. - Implementace
+18.4. - Dokončení, instalatér
+25.4. - Dokumentace
+29.4. - Odevzdání projektu
+30.4. - zasloužený odpočinek
+
+—————————————
+Repozitář
+
+	Gitlab - https://gitlab.com/kony97/ivs_project_2
